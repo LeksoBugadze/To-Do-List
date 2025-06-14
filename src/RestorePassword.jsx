@@ -53,7 +53,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
         setErrorMessageText('');
         setLoading(true);
         try{
-            const respone=await fetch('http://localhost:8000/sendverifyCode',{
+            const respone=await fetch('https://to-do-list-hbe2.onrender.com/sendverifyCode',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -84,7 +84,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
         setErrorMessageText('');
         setLoading(true);
         try{
-            const response=await fetch('http://localhost:8000/verify',{
+            const response=await fetch('https://to-do-list-hbe2.onrender.com/verify',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -125,7 +125,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
 
         try{
             
-            const response=await fetch('http://localhost:8000/setNewPassword',{
+            const response=await fetch('https://to-do-list-hbe2.onrender.com/setNewPassword',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

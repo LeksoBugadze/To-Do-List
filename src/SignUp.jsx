@@ -113,7 +113,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
             return;
         }
         try{
-            const response = await fetch(`http://localhost:8000/sendCode`,{
+            const response = await fetch(`https://to-do-list-hbe2.onrender.com/sendCode`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
@@ -143,7 +143,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
         try{
             console.log(verifyCode)
 
-            const response= await fetch(`http://localhost:8000/verify`,{
+            const response= await fetch(`https://to-do-list-hbe2.onrender.com/verify`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -174,7 +174,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
 
     async function handleSubmit() {
         try {
-            const response = await fetch('http://localhost:8000/sign-up', {
+            const response = await fetch('https://to-do-list-hbe2.onrender.com/sign-up', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -12,7 +12,7 @@ function MainPage({userID}) {
 
     async function getUserTasks(){
         try{
-            const response=await fetch('http://localhost:8000/getTasks',{
+            const response=await fetch('https://to-do-list-hbe2.onrender.com/getTasks',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ function MainPage({userID}) {
             
             setNewTaskDescription('');
             setShowModal(false);
-            const response=await fetch(`http://localhost:8000/addTask`,{
+            const response=await fetch(`https://to-do-list-hbe2.onrender.com/addTask`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'

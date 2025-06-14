@@ -7,7 +7,7 @@ function CompleteTaskPage({userID}){
     useEffect(()=>{
         async function fetchCompletedTasks(){
             try{
-                const response=await fetch(`http://localhost:8000/completedTasks/user/${userID}`);
+                const response=await fetch(`https://to-do-list-hbe2.onrender.com/completedTasks/user/${userID}`);
         
                 const data= await response.json();
         

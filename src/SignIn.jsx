@@ -58,7 +58,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         e.preventDefault();
         setLoading(true);
         try{
-            const response=await fetch(`http://localhost:8000/login`,{
+            const response=await fetch(`https://to-do-list-hbe2.onrender.com/login`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         setErrorMessageText('');
         setLoading(true);
         try{
-            const response=await fetch('http://localhost:8000/verify',{
+            const response=await fetch('https://to-do-list-hbe2.onrender.com/verify',{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -123,7 +123,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
                 setTwoFactorPassed(true);
 
                 
-                const loginResponse = await fetch('http://localhost:8000/getUserAfterVerification', {
+                const loginResponse = await fetch('https://to-do-list-hbe2.onrender.com/getUserAfterVerification', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -161,7 +161,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         setErrorMessageText('');
         setLoading(true);
         try{
-            const respone=await fetch('http://localhost:8000/sendverifyCode',{
+            const respone=await fetch('https://to-do-list-hbe2.onrender.com/sendverifyCode',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

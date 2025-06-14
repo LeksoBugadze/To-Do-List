@@ -18,7 +18,7 @@ function TaskCard({ setDesc, description, userID ,index,setTasks}) {
 
     async function completeTask(i){
       try{
-        const response= await fetch(`http://localhost:8000/complete/user/${userID}/task/${i}`,{
+        const response= await fetch(`https://to-do-list-hbe2.onrender.com/complete/user/${userID}/task/${i}`,{
             method:'PUT',
             headers:{
               'Content-Type':'application/json'
@@ -36,7 +36,7 @@ function TaskCard({ setDesc, description, userID ,index,setTasks}) {
     }
 
     async function deleteTask(index){
-        const response=await fetch(`http://localhost:8000/user/${userID}/task/${index}`,{
+        const response=await fetch(`https://to-do-list-hbe2.onrender.com/user/${userID}/task/${index}`,{
             method:'DELETE',
         })
 

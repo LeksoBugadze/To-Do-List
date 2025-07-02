@@ -34,7 +34,9 @@ async function sendEmailFunction(receiver,content,subject){
 }
 
 
-
+app.get("/",(req,res)=>{
+    res.send("TO-DO LIST SERVER")
+})
 
 async function startServer(){
     try{

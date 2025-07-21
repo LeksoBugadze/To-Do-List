@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { link } from './App';
 
 function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswordModal,ErrorMessage}){
 
@@ -53,7 +54,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
         setErrorMessageText('');
         setLoading(true);
         try{
-            const respone=await fetch('https://to-do-list-hbe2.onrender.com/sendverifyCode',{
+            const respone=await fetch(`${link}/sendverifyCode`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -84,7 +85,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
         setErrorMessageText('');
         setLoading(true);
         try{
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/verify',{
+            const response=await fetch(`${link}/verify`,{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -125,7 +126,7 @@ function RestorePassword({setPasswordRestored,passwordRestored, setRestorePasswo
 
         try{
             
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/setNewPassword',{
+            const response=await fetch(`${link}/setNewPassword`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

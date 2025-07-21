@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import ErrorMessage from "./ErrorMessage";
-import { use } from "react";
+import { link } from "./App";
 
 
 function Settings({userID,setUser,userEmail}){
@@ -36,7 +36,7 @@ function Settings({userID,setUser,userEmail}){
     useEffect(()=>{
         async function getData() {
             try{
-                const response=await fetch(`https://to-do-list-hbe2.onrender.com/getUserData/id/${userID}`,{
+                const response=await fetch(`${link}/getUserData/id/${userID}`,{
                     method:'GET'
                 });
                 const data=await response.json();
@@ -73,7 +73,7 @@ function Settings({userID,setUser,userEmail}){
     async function checkUserPassword(changedAtribute,value){
         setCheckUserPasswordLoading(true);
         try{
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/checkPassword',{
+            const response=await fetch(`${link}/checkPassword`,{
                 method:'POST',
                 headers:{
                     "Content-Type":'application/json'
@@ -117,7 +117,7 @@ function Settings({userID,setUser,userEmail}){
         setErrorMessageText('');
         setLoading(true);
         try{
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/verify',{
+            const response=await fetch(`${link}/verify`,{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -157,7 +157,7 @@ function Settings({userID,setUser,userEmail}){
         }
 
         try{
-            const response =await fetch('https://to-do-list-hbe2.onrender.com/changeEmailCode',{
+            const response =await fetch(`${link}/changeEmailCode`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -188,7 +188,7 @@ function Settings({userID,setUser,userEmail}){
     async function saveEmail(){
         setLoading(true);
         try{
-            const respone=await fetch(`https://to-do-list-hbe2.onrender.com/changeEmail/id/${userID}/${email}`);
+            const respone=await fetch(`${link}/changeEmail/id/${userID}/${email}`);
 
             const data=await respone.json();
 
@@ -211,7 +211,7 @@ function Settings({userID,setUser,userEmail}){
     async function saveUserName(){
         setLoading(true);
         try{
-            const respone=await fetch(`https://to-do-list-hbe2.onrender.com/changeUserName/id/${userID}/${userName}`);
+            const respone=await fetch(`${link}/changeUserName/id/${userID}/${userName}`);
 
             const data=await respone.json();
 
@@ -235,7 +235,7 @@ function Settings({userID,setUser,userEmail}){
         setTwoFaLoading(true);
 
         try{
-            const response=await fetch(`https://to-do-list-hbe2.onrender.com/activete2FA/id/${userID}`,{
+            const response=await fetch(`${link}/activete2FA/id/${userID}`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

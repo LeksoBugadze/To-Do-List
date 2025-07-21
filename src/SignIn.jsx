@@ -2,7 +2,7 @@ import React,{useState,createContext,useEffect} from "react";
 import ErrorMessage from "./ErrorMessage";
 import RestorePassword from "./RestorePassword";
 export const UserContext=createContext();
-
+import { link } from "./App";
 
 function SignIn({logIn,setUser,setUserID,emailSetter}){
     const [email, setEmail] = useState('');
@@ -58,7 +58,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         e.preventDefault();
         setLoading(true);
         try{
-            const response=await fetch(`https://to-do-list-hbe2.onrender.com/login`,{
+            const response=await fetch(`${link}/login`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         setErrorMessageText('');
         setLoading(true);
         try{
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/verify',{
+            const response=await fetch(`${link}/verify`,{
                 method:'POST',
                 headers:{
                     'Content-type':'application/json'
@@ -123,7 +123,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
                 setTwoFactorPassed(true);
 
                 
-                const loginResponse = await fetch('https://to-do-list-hbe2.onrender.com/getUserAfterVerification', {
+                const loginResponse = await fetch(`${link}/getUserAfterVerification`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -161,7 +161,7 @@ function SignIn({logIn,setUser,setUserID,emailSetter}){
         setErrorMessageText('');
         setLoading(true);
         try{
-            const respone=await fetch('https://to-do-list-hbe2.onrender.com/sendverifyCode',{
+            const respone=await fetch(`${link}/sendverifyCode`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

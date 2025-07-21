@@ -1,8 +1,10 @@
+import { link } from "./App";
+
 function CompletedTasksCard({date,month,day,description,index,setCompletedTasks,userID}){
 
     async function handleClick(){
         try{
-            const response=await fetch(`https://to-do-list-hbe2.onrender.com/delete/completedTasks/user/${userID}/index/${index}`,{
+            const response=await fetch(`${link}/delete/completedTasks/user/${userID}/index/${index}`,{
                 method:'DELETE'
             })
             const data=await response.json();

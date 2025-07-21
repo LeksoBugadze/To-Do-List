@@ -7,6 +7,8 @@ import Settings from "./settingsPage";
 import { UserContext } from "./SignIn";
 import React,{useState,useEffect} from "react";
 
+export const link="https://to-do-list-3hctow.fly.dev";
+
 function App(){ 
   const [logged,setLogged]=useState(false);
   const [signed,setSigned]=useState(false);

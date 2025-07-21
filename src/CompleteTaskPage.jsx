@@ -1,5 +1,6 @@
 import CompletedTasksCard from "./CompletedTasksCard";
 import React,{useState,useEffect} from "react"
+import { link } from "./App";
 
 function CompleteTaskPage({userID}){
     const [completedTasks,setCompletedTasks]=useState([]);
@@ -7,7 +8,7 @@ function CompleteTaskPage({userID}){
     useEffect(()=>{
         async function fetchCompletedTasks(){
             try{
-                const response=await fetch(`https://to-do-list-hbe2.onrender.com/completedTasks/user/${userID}`);
+                const response=await fetch(`${link}/completedTasks/user/${userID}`);
         
                 const data= await response.json();
         

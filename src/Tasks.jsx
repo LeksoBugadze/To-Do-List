@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import EditModal from './EditModal';
+import { link } from './App';
 
 function TaskCard({ setDesc, description, userID ,index,setTasks}) {
     const [dropDown,setDropDown]=useState(false);
@@ -18,7 +19,7 @@ function TaskCard({ setDesc, description, userID ,index,setTasks}) {
 
     async function completeTask(i){
       try{
-        const response= await fetch(`https://to-do-list-hbe2.onrender.com/complete/user/${userID}/task/${i}`,{
+        const response= await fetch(`${link}/complete/user/${userID}/task/${i}`,{
             method:'PUT',
             headers:{
               'Content-Type':'application/json'
@@ -36,7 +37,7 @@ function TaskCard({ setDesc, description, userID ,index,setTasks}) {
     }
 
     async function deleteTask(index){
-        const response=await fetch(`https://to-do-list-hbe2.onrender.com/user/${userID}/task/${index}`,{
+        const response=await fetch(`${link}/user/${userID}/task/${index}`,{
             method:'DELETE',
         })
 

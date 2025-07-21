@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import VerifModal from "./VerificationModal";
 import ErrorMessage from "./ErrorMessage";
+import { link } from "./App";
 
 function SignUp({logged,signed,setUser,setUserID,emailSetter}){
 
@@ -113,7 +114,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
             return;
         }
         try{
-            const response = await fetch(`https://to-do-list-hbe2.onrender.com/sendCode`,{
+            const response = await fetch(`${link}/sendCode`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
@@ -143,7 +144,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
         try{
             console.log(verifyCode)
 
-            const response= await fetch(`https://to-do-list-hbe2.onrender.com/verify`,{
+            const response= await fetch(`${link}/verify`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -174,7 +175,7 @@ function SignUp({logged,signed,setUser,setUserID,emailSetter}){
 
     async function handleSubmit() {
         try {
-            const response = await fetch('https://to-do-list-hbe2.onrender.com/sign-up', {
+            const response = await fetch(`${link}/sign-up`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

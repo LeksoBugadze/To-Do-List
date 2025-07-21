@@ -1,6 +1,7 @@
 import TaskCard from "./Tasks";
 import Modal from "./Modal";
 import React,{useState,useEffect} from 'react'
+import { link } from "./App";
 
 function MainPage({userID}) {
 
@@ -12,7 +13,7 @@ function MainPage({userID}) {
 
     async function getUserTasks(){
         try{
-            const response=await fetch('https://to-do-list-hbe2.onrender.com/getTasks',{
+            const response=await fetch(`${link}/getTasks`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -39,7 +40,7 @@ function MainPage({userID}) {
             
             setNewTaskDescription('');
             setShowModal(false);
-            const response=await fetch(`https://to-do-list-hbe2.onrender.com/addTask`,{
+            const response=await fetch(`${link}/addTask`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'

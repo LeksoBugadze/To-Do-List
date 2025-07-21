@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { link } from "./App";
 
 function EditModal({setEditModal,task,setTasks,userID,index}){
     const [newTask,setNewTask]=useState(task);
@@ -6,7 +7,7 @@ function EditModal({setEditModal,task,setTasks,userID,index}){
     async function handleEdit(){
        
         try{
-            const response=await fetch(`https://to-do-list-hbe2.onrender.com/edit/user/${userID}/task/${index}`,{
+            const response=await fetch(`${link}/edit/user/${userID}/task/${index}`,{
                 method:'PUT',
                 headers:{
                     'Content-Type': 'application/json'

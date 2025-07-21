@@ -8,7 +8,7 @@ const cors=require('cors');
 const app=express();
 const User=require('./userSchema');
 
-const PORT=8000;
+const PORT=3000;
 
 const resend=new Resend(process.env.API_KEY);
 
@@ -44,7 +44,7 @@ async function startServer(){
         
         console.log('connected to mongoDB');
 
-        app.listen(PORT,()=>{
+        app.listen(PORT,'0.0.0.0',()=>{
             console.log(`Server is running on ${PORT}`);
         });
 

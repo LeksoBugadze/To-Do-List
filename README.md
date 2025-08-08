@@ -36,7 +36,7 @@ This is a simple yet secure To-Do list application which u can check out [here](
 git clone --recursive https://github.com/LeksoBugadze/To-Do-List.git
 ```
 
-### Change links in fetch functions to your localhost link 
+### Change link variable on line 10 in App.jsx to your localhost link 
 
 ### Run Front-end
 
